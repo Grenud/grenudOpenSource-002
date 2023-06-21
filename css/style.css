@@ -337,7 +337,7 @@ body {
 
 #sm-banner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -347,7 +347,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   background-image: url("../img/banner/b17.jpg");
-  min-width: 580px;
+  min-width: 50%;
   height: 50vh;
   background-size: cover;
   background-position: center;
@@ -382,7 +382,7 @@ body {
 
 #banner3{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0 50px;
 }
@@ -393,7 +393,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   background-image: url("../img/banner/b7.jpg");
-  min-width: 580px;
+  min-width: 50%;
   height: 30vh;
   background-size: cover;
   background-position: center;
@@ -478,7 +478,6 @@ body {
 .col img{
   
     width: 100px;
-    height: 100px;
     margin-bottom: 30px;
 
 }
