@@ -1,3 +1,11 @@
+/* 
+
+Global CSS and Definitions 
+
+*/
+
+
+/* Spartan Font -> 100, 200, 300, 400, 500, 600, 700, 800, 900 */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -10,6 +18,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 :root {
   /* Font Variables */
   --primary-font: "Spartan", sans-serif;
@@ -18,11 +27,16 @@ html {
   --heading-text-color: #222;
   --pri-color: #e3e6f3;
   --sec-color: #088178;
+  --white-ground: white;
 
+  /* Fixed Color Variables */
+  --always-dark: #1a1a1a;
+  --always-dark-gray: #2f2f2f;
+
+  /* Text Color Variables */
   --pri-text-color: #1a1a1a;
   --sec-text-color: #465b52;
-
-  --white-ground: white;
+  
   --white-text: white;
   --dark-text: #1a1a1a;
   --gray-text: gray;
@@ -76,7 +90,7 @@ button.normal {
   font-weight: 600;
   padding: 15px 30px;
   color: var(--sec-color);
-  background-color: var(--white-ground);
+  background-color: white;
   border-radius: 4px;
   cursor: pointer;
   border: none;
@@ -172,9 +186,19 @@ body {
 
 #hero h4 {
   padding-bottom: 15px;
+  color: var(--always-dark);
 }
+
+#hero h2{
+  color: var(--always-dark);
+}
+
 #hero h1 {
   color: var(--sec-color);
+}
+
+#hero p {
+  color: var(--always-dark-gray)
 }
 
 #hero button {
@@ -191,11 +215,13 @@ body {
 #feature {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
+
 #feature .fe-box {
+  display: none;
   width: 180px;
   text-align: center;
   padding: 25px 15px;
@@ -238,6 +264,96 @@ body {
 #feature .fe-box:nth-child(6) h6 {
   background-color: #fff2e5;
 }
+
+
+#feature .active-feature {
+  position: absolute;
+  display: block;
+  background-color: var(--white-ground);
+  /* right: 26%; */
+  height: 17em;
+  width: 15em;
+  transition: all .5s;
+  animation: cardShift 4.5s ease-in-out forwards;
+  /* box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.544); */
+}
+
+@keyframes cardShift {
+  0% {
+    opacity: 0.5;
+    right: 26%;
+  }
+  10%{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.544);
+    right: 43%;
+    opacity: 1;
+    height: 17em;
+    width: 15em;
+  }
+  80%{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.544);
+    right: 43%;
+    opacity: 1;
+    height: 17em;
+    width: 15em;
+  }
+  100%{
+    box-shadow: 0px 0px 0px rgba(70, 62, 221, 0.544);
+    opacity: 0.5;
+    right: 68%;
+    width: 180px;
+    height: 10em;
+  }
+}
+
+
+#feature .active-feature:hover{
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.544);
+}
+
+
+#feature .next-feature-card, #feature .prev-feature-card{
+  display: block;
+  opacity: 0.5;
+}
+
+#feature .next-feature-card{
+  animation: next-feature-card-shift .45s 3.6s ease-in-out forwards;
+}
+
+#feature .prev-feature-sibling{
+  animation: prev-feature-card-shift .5s 3.6s ease-in-out forwards;
+}
+
+
+@keyframes next-feature-card-shift {
+  0%{
+    opacity: 0.5;
+    right: 26%;
+  }
+  100%{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.544);
+    right: 43%;
+    opacity: 0.5;
+    /* height: 17em;
+    width: 15em; */
+  }
+}
+
+@keyframes prev-feature-card-shift {
+  0%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 0;
+    width: 100px;
+    height: 5em;
+  }
+}
+
+
+
+
 #product1 {
   text-align: center;
 }
