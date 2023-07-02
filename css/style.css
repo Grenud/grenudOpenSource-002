@@ -47,6 +47,7 @@ html {
 
 body {
   font-family: var(--primary-font);
+  width: 100%;
 }
 
 h1 {
@@ -76,6 +77,12 @@ p {
   color: var(--sec-text-color);
   margin: 15px 0 20px 0;
 }
+
+
+
+
+/* ---------------- Utils ------------------- */
+
 
 .section-p1 {
   padding: 40px 80px;
@@ -111,9 +118,13 @@ button.white {
   transition: 0.2s;
 }
 
-body {
-  width: 100%;
-}
+
+
+
+
+/* ---------------------------- Navbar CSS ---------------------------- */
+
+
 .logo {
   width: 100px;
   height: 100px;
@@ -167,6 +178,200 @@ body {
   bottom: -4px;
   left: 20px;
 }
+
+
+
+
+/* ------------------- Cart CSS ------------------------- */
+
+#cart{
+  background-color: var(--white-ground);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 30%;
+  z-index: 999;
+  box-shadow: -2px -2px 5px var(--always-dark);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cart-default{
+  display: none;
+}
+
+.cart-open{
+  display: block;
+  animation: openCart 1s ease-in-out forwards;
+}
+
+@keyframes openCart {
+  0%{
+    right: -30%;
+    opacity: 0;
+    display: none;
+  }
+  100%{
+    right: 0px;
+    opacity: 1;
+    display: block;
+  }
+}
+
+.cart-close{
+  animation: closeCart 1s ease-in-out forwards;
+}
+
+@keyframes closeCart {
+  0%{
+    right: 0px;
+    opacity: 1;
+    display: block;
+  }
+  100%{
+    right: -1000px;
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* Cart Header */
+#cart .cart-header{
+  position: fixed;
+  width: 30%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--gray-text);
+  background-color: var(--white-ground);
+}
+
+
+#cart .cart-header .cart-heading{
+  color: var(--dark-text);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#cart .cart-header #close-cart{
+  color: var(--gray-text);
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+/* Cart Body */
+#cart .cart-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.cart-body .cart-item{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--gray-text);
+  width: 100%;
+}
+
+.cart-body .cart-item img{
+  height: 9em;
+}
+
+.cart-body .cart-item .cart-item-description{
+  margin: 10px;
+}
+
+.cart-body .cart-item .item-counter{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cart-item .item-counter .counter{
+  margin: 10px;
+  margin-right: 20px;
+  border: .5px solid var(--gray-text);
+}
+
+.item-counter .counter button{
+  border: none;
+  background-color: transparent;
+  color: var(--gray-text);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.item-counter .counter span{
+  color: var(--gray-text);
+  padding: 5px 10px;
+}
+
+.item-counter .amount{
+  color: var(--gray-text);
+}
+
+
+
+
+/* Cart Footer */
+
+.cart-footer{
+  /* position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 30%; */
+  padding: 10px 15px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cart-footer .subtotal{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.cart-footer .subtotal span{
+  color: var(--pri-text-color);
+}
+
+.cart-footer button{
+  padding: 10px 10em;
+  border-radius: 0px;
+  margin: 10px;
+  background-color: var(--sec-color);
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  font-family: var(--primary-font);
+}
+
+
+.cart-footer button:hover{
+  cursor: pointer;
+  background-color: white;
+  color: var(--sec-color);
+  box-shadow: 1px 1px 3px var(--dark-text);
+}
+
+
+
+
+
 
 /* Home Page */
 

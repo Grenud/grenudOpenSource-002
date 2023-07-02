@@ -118,11 +118,20 @@ setInterval(CarouselMain, 4000)
 
 // ------------------------ Cart Functionality ---------------------------- //
 
+const cart = document.getElementById("cart");
 const cartBtn = document.getElementById("cart-btn");
+const cartCloseBtn = document.getElementById("close-cart");
 
 function openCart() {
-    console.log("cart")
+    cart.classList.remove("cart-default")
+    cart.classList.remove("cart-close")
+    cart.classList.add("cart-open")
 }
 
+function closeCart(){
+    cart.classList.remove("cart-open")
+    cart.classList.add("cart-close")
+}
 
 cartBtn.addEventListener("click", openCart);
+cartCloseBtn.addEventListener("click", closeCart);
