@@ -133,7 +133,7 @@ button.white {
 #header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px 80px;
   background-color: var(--pri-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
@@ -881,10 +881,3 @@ footer .copyright{
 
 
 /* Start Media Query */
-
-
-
-
-
-
-
